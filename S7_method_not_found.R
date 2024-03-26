@@ -18,10 +18,10 @@ try_obj <- S7::new_class(
 )
 
 # A setter
-set_values <- S7::new_generic("set_values", "values")
-S7::method(set_values, try_obj) <- function(values) {
-  self@values <- values
-  return(self)
+set_values <- S7::new_generic("set_values", "x")
+S7::method(set_values, try_obj) <- function(x, values) {
+  x@values <- values
+  return(x)
 }
 
 # Run me and watch the method not be found
