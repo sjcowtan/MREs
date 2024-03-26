@@ -17,14 +17,14 @@ try_obj <- S7::new_class(
   }
 )
 
-# A setter
+# A setter.  I had "values" where "x" is, but of course it needs the object, duh
 set_values <- S7::new_generic("set_values", "x")
 S7::method(set_values, try_obj) <- function(x, values) {
   x@values <- values
   return(x)
 }
 
-# Run me and watch the method not be found
+# Run me and watch the method be found
 do_try <- function(newvals = 1:5) {
   # Construct an object
   try_instance <- try_obj(values = 1:7)
